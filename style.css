@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap");
+
+:root {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    -webkit-font-feature-settings: "ss03"on, "cv01"on, "cv03"on, "cv04"on;
+    font-feature-settings: "ss03"on, "cv01"on, "cv03"on, "cv04"on;
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    /* Defining primary colors. */
+    --ZPT-Cyan: 016, 147, 138;
+    --ZPT-White: 255, 255, 255;
+    --ZPT-Black: 000, 000, 000;
+
+    /* Defining gray colors. */
+    --ZPT-VVB-Gray: 036, 039, 046;
+    --ZPT-VB-Gray: 072, 078, 092;
+    --ZPT-N-Gray: 118, 128, 147;
+    --ZPT-VD-Gray: 175, 181, 192;
+
+    /* Defining background colors. */
+    --ZPT-Primary-BG: 255, 255, 255;
+    --ZPT-Secondary-BG: 250, 250, 250;
+
+    /* Defining border colors. */
+    --ZPT-N-BorderGray: 228, 231, 230;
+
+    /* Defining shadows. */
+    --cardShadow: 0 12px 16px rgba(var(--ZPT-Black), 0.08),
+        0 6px 8px rgba(var(--ZPT-Black), 0.08), 0 2px 4px rgba(var(--ZPT-Black), 0.04),
+        0 0 2px rgba(var(--ZPT-Black), 0.04);
+}
+
+/* ----------------------------- */
+/* ---- NORMALISING THE CSS ---- */
+/* ----------------------------- */
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    /* Correct the line height in all browsers. */
+    line-height: 1.6rem;
+    /* Prevent adjustments of font size after orientation changes in iOS. */
+    -webkit-text-size-adjust: 100%;
+    /* Hide all the elements outside the body area. */
+    /* overflow: hidden; */
+}
+
+body {
+    /* Remove the margin in all browsers. */
+    margin: 0;
+    /* Hide all the elements outside the body area. */
+    overflow-x: hidden;
+}
+
+a {
+    /* Remove the gray background on active links in IE 10. */
+    background-color: transparent;
+}
+
+img {
+    /* Remove the border on images inside links in IE 10. */
+    border-style: none;
+}
+
+svg {
+    pointer-events: none;
+}
+
+/* --------------------------- */
+/* ---- BASIC MISC STYLES ---- */
+/* --------------------------- */
+
+/* Defining colors when select/highlight elements. */
+::-moz-selection {
+    color: rgb(var(--ZPT-White));
+    background-color: rgb(var(--ZPT-Cyan));
+}
+
+::selection {
+    color: rgb(var(--ZPT-White));
+    background-color: rgb(var(--ZPT-Cyan));
+}
+
+/* Defining styles to show when focusing with a keyboard. */
+*:focus-visible {
+    -webkit-transition: all 250ms ease-in-out;
+    -o-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    outline: 3px solid rgba(var(--focusColor, var(--ZPT-Cyan)), 0.24);
+    /* outline-offset: 2px; */
+}
+
+/* Defining styles to show when focusing with a mouse, touch, or stylus. */
+*:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* ------------------------- */
+/* ---- BODY & HEADINGS ---- */
+/* ------------------------- */
+
+body {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 2.4rem;
+    min-width: 100%;
+    min-height: 100vh;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    background-color: rgb(var(--ZPT-Primary-BG));
+    overflow-x: hidden;
+}
+
+h1,
+h2 {
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--ZPT-VVB-Gray);
+    margin: unset;
+}
+
+h1 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+
+/* ---------------------- */
+/* ---- ANCHOR LINKS ---- */
+/* ---------------------- */
+
+a,
+a:visited {
+    /* Defining basic link styles. */
+    padding: unset;
+    color: unset;
+}
+
+/* Defining hover and focus (by keyboard) styles. */
+a:hover,
+a:focus-visible,
+a:focus-within {
+    outline: none;
+}
+
+/* -------------------- */
+/* ---- ANIMATIONS ---- */
+/* -------------------- */
+
+@-webkit-keyframes zoom-in {
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom-in {
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes fade {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    100% {
+        opacity: 1;
+    }
+}
+
+/* --------------------- */
+/* ---- MAIN STYLES ---- */
+/* --------------------- */
+
+.main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    width: 60rem;
+    max-width: 60rem;
+    background: rgb(var(--ZPT-Primary-BG));
+    -webkit-box-shadow: var(--cardShadow);
+    box-shadow: var(--cardShadow);
+    border-radius: 1.2rem;
+    z-index: 99;
+    opacity: 0;
+    -webkit-transform: scale(.8);
+    -ms-transform: scale(.8);
+    transform: scale(.8);
+    -webkit-animation: zoom-in .5s .2s ease-out forwards;
+    animation: zoom-in .5s .2s ease-out forwards;
+}
+
+@media (max-width: 664px) {
+    body {
+        padding: 0;
+    }
+
+    .main {
+        width: 100vw;
+        max-width: unset;
+        border-radius: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        min-height: 100vh;
+    }
+}
+
+.main :is(.top-section, .middle-section, .bottom-section) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.main .top-section {
+    padding: 3.2rem 3.2rem 2.4rem 3.2rem;
+}
+
+@media (max-width: 664px) {
+    .main .top-section {
+        padding: 3.2rem 2.4rem 2.4rem 2.4rem;
+    }
+}
+
+.main .top-section .logo {
+    height: 2.4rem;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.main .top-section .logo img {
+    height: 100%;
+}
+
+.main .top-section .hero-illustration {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    max-height: 24rem;
+}
+
+.main .top-section .hero-illustration img {
+    width: min(48rem, 100%);
+    aspect-ratio: 2/1;
+}
+
+.main :is(h1, h2) {
+    text-align: center;
+}
+
+@media (max-width: 664px) {
+    .main :is(h1, h2) {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+    }
+}
+
+.main span {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    text-align: center;
+    color: rgb(var(--ZPT-N-Gray));
+}
+
+.main .middle-section {
+    padding: 2.4rem 3.2rem;
+    background: rgb(var(--ZPT-Secondary-BG));
+    border-top: 2px dashed rgb(var(--ZPT-N-BorderGray));
+    border-bottom: 2px dashed rgb(var(--ZPT-N-BorderGray));
+}
+
+@media (max-width: 664px) {
+    .main .middle-section {
+        padding: 2.4rem;
+    }
+}
+
+.main .middle-section ul.social {
+    margin: .8rem 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1.6rem;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.main .middle-section ul.social li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* flex-basis: 100%; */
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+@media (max-width: 556px) {
+    .main .middle-section ul.social li {
+        -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
+    }
+}
+
+.main .middle-section ul.social li a {
+    --borderOpacity: 0.32;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    max-height: 4.8rem;
+    font-family: inherit;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(var(--ZPT-N-Gray));
+    border-radius: .6rem;
+    border: 1px dashed rgba(var(--ZPT-N-Gray), var(--borderOpacity));
+    background: rgb(var(--ZPT-Primary-BG));
+    -webkit-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.main .middle-section ul.social li.instagram a {
+    color: rgb(221, 42, 123);
+    border-color: rgba(221, 42, 123, var(--borderOpacity));
+}
+
+.main .middle-section ul.social li.facebook a {
+    color: rgb(59, 89, 152);
+    border-color: rgba(71, 99, 160, var(--borderOpacity));
+}
+
+.main .middle-section ul.social li.etsy a {
+    color: rgb(235, 109, 32);
+    border-color: rgba(235, 109, 32, var(--borderOpacity));
+}
+
+.main .middle-section ul.social li.pinterest a {
+    color: rgb(200, 35, 44);
+    border-color: rgba(200, 35, 44, var(--borderOpacity));
+}
+
+.main .middle-section ul.social li a:hover,
+.main .middle-section ul.social li a:focus-visible {
+    --borderOpacity: 1;
+}
+
+.main .bottom-section {
+    padding: 1.6rem 3.2rem;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: end;
+    align-content: flex-end;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 664px) {
+    .main .bottom-section {
+        padding: 1.6rem 2.4rem;
+    }
+}
+
+.main .bottom-section span {
+    font-size: 1.1rem;
+    color: rgb(var(--ZPT-VD-Gray));
+}
+
+/* -------------------------------- */
+/* ---- BACKGROUND GRID STYLES ---- */
+/* -------------------------------- */
+
+.background {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+@media (max-width: 664px) {
+    .background {
+        display: none;
+    }
+}
+
+.background::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--ZPT-VB-Gray), 0.24);
+}
+
+.background .grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background .image-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: max(100% + 10rem, 172rem);
+    height: calc(100% + 10rem);
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    -ms-grid-rows: -webkit-max-content;
+    -ms-grid-rows: max-content;
+    grid-template-rows: -webkit-max-content;
+    grid-template-rows: max-content;
+    grid-auto-columns: minmax(20rem, 1fr);
+    grid-auto-rows: -webkit-max-content;
+    grid-auto-rows: max-content;
+    gap: 1.6rem;
+    opacity: 0.24;
+}
+
+
+.background .image-grid .column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 1.6rem;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+.background .image-grid .image-container img {
+    width: 100%;
+    aspect-ratio: 5/4;
+    border-radius: 0.6rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.transform-up {
+    -webkit-transform: translateY(-6.4rem);
+    -ms-transform: translateY(-6.4rem);
+    transform: translateY(-6.4rem);
+}
