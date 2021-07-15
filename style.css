@@ -241,11 +241,11 @@ a:focus-within {
 }
 
 .main .top-section > * + * {
-    margin-top: 1.2rem;
+    margin: 1.2rem 0 0 0;
 }
 
 .main .middle-section > * + * {
-    margin-top: 1.2rem;
+    margin: 1.2rem 0 0 0;
 }
 
 .main .top-section {
@@ -260,8 +260,7 @@ a:focus-within {
 
 .main .top-section .logo {
     height: 2.4rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .main .top-section .logo img {
@@ -296,8 +295,8 @@ a:focus-within {
 
 @media (max-width: 664px) {
     .main :is(h1, h2) {
-        font-size: 1.8rem;
-        line-height: 2.4rem;
+        font-size: 1.8rem !important;
+        line-height: 2.4rem !important;
     }
 }
 
@@ -385,7 +384,7 @@ a:focus-within {
 }
 
 .main .middle-section ul.social li a svg {
-    margin-right: 1rem;
+    margin: 0 1rem 0 0;
 }
 
 .main .middle-section ul.social li.instagram a {
