@@ -229,7 +229,6 @@ a:focus-within {
     }
 }
 
-/* .main :is(.top-section, .middle-section, .bottom-section) { */
 .main .top-section, .main .middle-section, .main .bottom-section {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -238,16 +237,16 @@ a:focus-within {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    /* gap: 1.2rem; */
+    gap: 1.2rem;
 }
 
-.main .top-section>*+* {
+/* .main .top-section>*+* {
     margin: 1.2rem 0 0 0;
 }
 
 .main .middle-section>*+* {
     margin: 1.2rem 0 0 0;
-}
+} */
 
 .main .top-section {
     padding: 3.2rem 3.2rem 2.4rem 3.2rem;
