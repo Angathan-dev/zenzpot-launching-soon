@@ -229,7 +229,8 @@ a:focus-within {
     }
 }
 
-.main :is(.top-section, .middle-section, .bottom-section) {
+/* .main :is(.top-section, .middle-section, .bottom-section) { */
+.main .top-section, .main .middle-section, .main .bottom-section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -240,11 +241,11 @@ a:focus-within {
     /* gap: 1.2rem; */
 }
 
-.main .top-section > * + * {
+.main .top-section>*+* {
     margin: 1.2rem 0 0 0;
 }
 
-.main .middle-section > * + * {
+.main .middle-section>*+* {
     margin: 1.2rem 0 0 0;
 }
 
@@ -289,12 +290,12 @@ a:focus-within {
     aspect-ratio: 2/1;
 }
 
-.main :is(h1, h2) {
+.main h1, .main h2 {
     text-align: center;
 }
 
 @media (max-width: 664px) {
-    .main :is(h1, h2) {
+    .main h1, .main h2 {
         font-size: 1.8rem !important;
         line-height: 2.4rem !important;
     }
