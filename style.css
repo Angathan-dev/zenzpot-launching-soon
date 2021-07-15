@@ -237,16 +237,13 @@ a:focus-within {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 1.2rem;
+    /* gap: 1.2rem; */
 }
 
-/* .main .top-section>*+* {
-    margin: 1.2rem 0 0 0;
-}
-
+.main .top-section>*+*,
 .main .middle-section>*+* {
-    margin: 1.2rem 0 0 0;
-} */
+    margin-top: 1.2rem;
+}
 
 .main .top-section {
     padding: 3.2rem 3.2rem 2.4rem 3.2rem;
@@ -384,7 +381,7 @@ a:focus-within {
 }
 
 .main .middle-section ul.social li a svg {
-    margin: 0 1rem 0 0;
+    margin-right: 1rem;
 }
 
 .main .middle-section ul.social li.instagram a {
