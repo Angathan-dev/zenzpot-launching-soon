@@ -394,10 +394,15 @@ a:focus-within {
     border-color: rgba(71, 99, 160, var(--borderOpacity));
 }
 
-.main .middle-section ul.social li.etsy a {
+.main .middle-section ul.social li.whatsapp a {
+    color: rgb(18, 140, 126);
+    border-color: rgba(18, 140, 126, var(--borderOpacity));
+}
+
+/* .main .middle-section ul.social li.etsy a {
     color: rgb(235, 109, 32);
     border-color: rgba(235, 109, 32, var(--borderOpacity));
-}
+} */
 
 .main .middle-section ul.social li.pinterest a {
     color: rgb(200, 35, 44);
